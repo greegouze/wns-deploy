@@ -3,7 +3,7 @@ version: '3'
 services:
   server:
     #build: ./server
-    image: greegouze/wns-server-deploy
+    image: greegouze/wns-deploy-server
     command: sh -c "npm run build && npm run prod"
     expose:
       - 5000
@@ -14,7 +14,7 @@ services:
       - mongodb
   client:
     #build: ./client
-    image: greegouze/wns-client-deploy
+    image: greegouze/wns-deploy-client
     command: sh -c "npm run build"
     volumes:
       - web-client-build:/app/build
